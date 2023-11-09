@@ -1,0 +1,195 @@
+---
+title: "Como um compartilhamento de bicicletas possibilita o sucesso rápido?"
+output: 
+  theme: cosmo
+  toc: true
+  toc_depth: 4
+  html_document:
+  highlight: monocrome
+date: "2023-11-09"
+author: "Lucas Lopes"
+---
+
+
+## 1. **Introdução**
+
+A empresa de compartilhamento de bicicletas, Cyclistic, sediada em Chicago, oferece serviços aos seus usuários. Com o objetivo de melhorar sua estratégia de marketing e impulsionar o crescimento futuro, a empresa está interessada em entender o comportamento de seus usuários ao usar os serviços. Como parte do curso de certificação Google Data Analytics, tive a oportunidade de conduzir um estudo de caso sobre a Cyclistic para analisar os dados e fornecer insights sobre o comportamento dos usuários. Neste projeto, seguirei as etapas do processo de análise de dados: perguntar, preparar, processar, analisar e compartilhar. O objetivo deste estudo de caso é fornecer insights acionáveis para a empresa considerar em sua estratégia de marketing.
+
+## 2. **Cenário**
+
+A Cyclistic opera uma frota de mais de 5.800 bicicletas que podem ser acessadas em mais de 600 estações de ancoragem pela cidade. As bicicletas podem ser retiradas de uma estação, utilizadas e devolvidas em qualquer estação da rede. Ao longo dos anos, as campanhas de marketing têm sido amplas e direcionadas a uma amostra transversal de usuários em potencial. A análise de dados mostrou que os ciclistas com associação anual são mais lucrativos do que os ciclistas ocasionais. Lily Moreno, diretora de marketing, quer implementar uma nova estratégia de marketing para converter os ciclistas ocasionais em membros anuais. Ela acredita que com a campanha certa há uma grande chance de alcançar essas conversões entre os tipos de usuários. Existem também opções de bicicletas amigáveis ao usuário, como bicicletas elétricas, bicicletas clássicas e bicicletas com ancoragem. Isso torna os serviços da Cyclistic mais inclusivos para as pessoas. Lily encarregou a equipe de análise de marketing de analisar os dados históricos de um ano dos usuários da Cyclistic para identificar tendências e hábitos e ajudar a criar essa campanha de marketing. A equipe de análise de marketing gostaria de saber:
+
+- Como os membros anuais e os ciclistas ocasionais diferem.
+- Por que os ciclistas ocasionais comprariam uma associação.
+- Como a Cyclistic pode usar a mídia digital para influenciar os ciclistas ocasionais a se tornarem membros.
+
+Aqui, eu irei analisar os dados históricos de viagens de bicicleta da Cyclistic para identificar as tendências no uso das bicicletas pelos ciclistas ocasionais e pelos membros.
+
+## 3. **Fase 1: Perguntar**
+
+### 3.1 **Objetivo de negócio**
+
+O objetivo de negócio deste estudo de caso é identificar oportunidades para campanhas de marketing direcionadas para converter ciclistas ocasionais em membros anuais. Isso será feito por meio da análise dos dados das viagens de bicicleta e da compreensão do comportamento e das preferências dos usuários. O objetivo final é aumentar a lucratividade e impulsionar o crescimento futuro da empresa.
+
+### 3.2 **Tarefa de negócio**
+
+Como analista, minha tarefa é:
+
+- Analisar os dados históricos de viagens de bicicleta da Cyclistic.
+- Identificar tendências e padrões no uso das bicicletas pelos ciclistas ocasionais e pelos membros.
+- Compreender o comportamento e as preferências desses dois grupos de usuários.
+- Identificar oportunidades para campanhas de marketing direcionadas para converter ciclistas ocasionais em membros anuais.
+- Utilizar insights da análise para informar o desenvolvimento de uma nova estratégia de marketing para a empresa.
+- Objetivo: aumentar a lucratividade e impulsionar o crescimento futuro.
+
+### 3.3 **Stakeholders**
+
+Os stakeholders neste estudo de caso incluem:
+
+- Lily Moreno: Diretora de Marketing da Cyclistic, responsável pela implementação das campanhas de marketing.
+- Equipe de marketing da Cyclistic: Responsáveis pela condução da análise e desenvolvimento da estratégia de marketing com base nos insights obtidos.
+- Ciclistas ocasionais da Cyclistic: Eles são o público-alvo da campanha de marketing, e seu comportamento e preferências serão foco principal da análise.
+- Membros anuais da Cyclistic: São o grupo para o qual a campanha de marketing está buscando converter os ciclistas ocasionais, e seu comportamento e preferências podem ser comparados aos dos ciclistas ocasionais na análise.
+- Investidores e acionistas da Cyclistic: Eles têm interesse financeiro no sucesso da empresa e podem estar interessados nos resultados da análise e em quaisquer mudanças na estratégia de marketing.
+
+## 4. **Fase 2: Preparar**
+
+### 4.1 **Localização dos dados**
+
+Os dados para esta análise foram obtidos através da Motivate International Inc. e podem ser acessados através do link fornecido (https://divvy-tripdata.s3.amazonaws.com/index.html). Eles incluem 12 meses de dados históricos de viagens da Cyclistic, uma empresa fictícia de compartilhamento de bicicletas com base em Chicago. Vale ressaltar que os dados são públicos e podem ser usados para explorar como diferentes tipos de clientes estão usando as bicicletas da Cyclistic.
+
+### 4.2 **Organização dos dados**
+
+Para este projeto, os dados usados consistem em arquivos CSV mensais dos últimos 12 meses (novembro de 2022 a outubro de 2023). Os arquivos incluem 13 colunas de informações relacionadas aos detalhes das viagens, como ID da viagem, tipo de usuário, duração da viagem, locais de partida e chegada e coordenadas geográficas, entre outros. Os dados estão organizados de forma a permitir a análise de tendências e padrões no uso dos serviços de compartilhamento de bicicletas da Cyclistic.
+
+### 4.3 **Credibilidade dos dados**
+
+A Motivate, Inc. coletou os dados para esta análise diretamente por meio de sua gestão do programa de compartilhamento de bicicletas da Cyclistic para a cidade de Chicago. Os dados são abrangentes e consistentes, pois incluem informações sobre todas as viagens feitas pelos usuários e não apenas uma amostra. Além disso, eles estão atualizados, pois são liberados mensalmente pela cidade de Chicago. Os dados são disponibilizados ao público pela cidade de Chicago.
+
+### 4.4 **Licenciamento, privacidade, segurança e acessibilidade dos dados**
+
+Os dados usados nesta análise tiveram todas as informações de identificação removidas para proteger a privacidade dos usuários. Essa limitação nos dados restringe o escopo da análise possível, pois não é possível determinar se os ciclistas ocasionais são usuários frequentes ou residentes da área de Chicago. Os dados estão sob uma licença específica e são disponibilizados para uso nesta análise.
+
+### 4.5 **Capacidade dos dados para responder às perguntas de negócio**
+
+O conjunto de dados disponível é suficiente para responder à pergunta de negócio sobre as diferenças nos padrões de uso entre membros anuais e ciclistas ocasionais. Por meio da observação detalhada das variáveis nos dados, foi determinado que os ciclistas ocasionais geralmente pagam por viagens individuais ou diárias, enquanto os membros geralmente adquirem compram pacotes de viagens.
+
+## 5. **Fase 3: Processamento de Dados** {#sec-5.-fase-3-processamento-de-dados}
+
+#### 5.0.1 **Quais ferramentas você está escolhendo e por quê?** {#sec-5.0.1-quais-ferramentas-voc-est-escolhendo-e-por-qu-}
+
+-   A fim de **preparar, processar, limpar, analisar e visualizar** de forma eficiente os dados para este projeto, selecionei o **RStudio Desktop** como **principal ferramenta**. O tamanho grande do conjunto de dados tornou **impraticável** o uso de ferramentas como **Microsoft Excel ou Google Sheets**, e o **RStudio Cloud** também **não foi capaz** de lidar com o volume de dados. O RStudio Desktop proporcionou as capacidades necessárias para trabalhar de forma efetiva com os dados e gerar insights significativos.
+
+-   Além do RStudio Desktop, também utilizei o **Tableau** para criar visualizações para este projeto. As poderosas capacidades de visualização de dados do Tableau me permitiram **comunicar de forma efetiva** os **resultados da análise e destacar tendências chave e padrões nos dados**.
+
+-   **No geral, a combinação do RStudio Desktop e do Tableau mostrou-se uma poderosa ferramenta para preparar, processar, limpar, analisar e visualizar os dados para este projeto.**
+
+#### 5.0.2 **Revisão dos Dados** {#sec-5.0.2-revis-o-dos-dados}
+
+Para obter **compreensão dos dados** e seu **potencial para análise**, foi realizada uma revisão para **avaliar o conteúdo** das variáveis, o **formato dos dados** e a **integridade dos dados**. Essa revisão inicial forneceu uma visão geral dos dados e ajudou a identificar **possíveis problemas ou desafios** que precisariam ser abordados no processo de preparação e análise.
+
+A revisão dos dados envolveu o seguinte:
+
+-   **Verificar os nomes das colunas em todos os 12 arquivos originais.**
+-   **Verificar valores ausentes.**
+-   **Verificar espaços em branco.**
+-   **Verificar registros duplicados.**
+-   **Outras anomalias dos dados.**
+
+Os 12 arquivos foram combinados em um único conjunto de dados após a revisão inicial ser concluída. O conjunto final de dados consistia em **5733451 linhas** e **13 colunas** de dados numéricos e de caracteres. Isso correspondia ao número de registros em todos os 12 arquivos de dados mensais.
+
+#### 5.0.3 **Configurando o Ambiente** {#sec-5.0.3-configurando-o-ambiente}
+
+```{r eval=FALSE}
+#----------------------------------------------------------------------------------#
+# Carregar pacotes
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(data.table)
+library(readr)
+library(psych)
+library(hrbrthemes)
+library(ggplot2)
+
+#----------------------------------------------------------------------------------#
+```
+
+#### 5.0.4 **Validação dos Dados** {#sec-5.0.4-valida-o-dos-dados}
+
+Após a revisão inicial dos dados, foi realizada uma validação dos dados para garantir sua integridade e confiabilidade. Essa etapa envolveu a análise mais detalhada das variáveis, a identificação de valores inconsistentes ou inválidos e a resolução de quaisquer problemas encontrados.
+
+A validação dos dados envolveu as seguintes etapas:
+
+-   **Verificação dos tipos de dados:** A verificação dos tipos de dados das variáveis foi realizada para garantir que elas estivessem corretamente especificadas. Isso foi especialmente importante para garantir que as variáveis numéricas fossem identificadas corretamente.
+    
+-   **Tratamento de valores ausentes:** Foi realizado um levantamento dos valores ausentes em todas as variáveis para ter uma compreensão completa da presença de dados faltantes. Foram adotadas abordagens apropriadas para lidar com os valores ausentes, como exclusão de registros ou imputação de valores.
+    
+-   **Identificação de dados inconsistentes:** Foi realizada uma análise minuciosa das variáveis para identificar quaisquer valores inconsistentes ou inválidos que pudessem afetar a análise. Esses valores foram tratados adequadamente, seja por correção ou exclusão dos registros.
+    
+-   **Resolução de problemas de formatação:** Verificou-se se havia problemas de formatação nos dados, como espaços em branco extras ou caracteres especiais indesejados. Esses problemas foram tratados por meio de limpeza e padronização dos dados.
+    
+A validação dos dados foi uma parte crítica do processo de preparação dos dados, garantindo que os resultados da análise fossem confiáveis e precisos.
+
+#### 5.0.5 **Limpeza e Transformação dos Dados** {#sec-5.0.5-limpeza-e-transforma-o-dos-dados}
+
+Após a validação dos dados, a etapa de limpeza e transformação dos dados foi realizada para preparar os dados para análise. Essa etapa envolveu a utilização de técnicas de limpeza, padronização e transformação dos dados, garantindo que estivessem em um formato adequado e coerente para a análise posterior.
+
+As principais tarefas realizadas durante a limpeza e transformação dos dados incluíram:
+
+-   **Limpeza de espaços em branco:** Verificou-se e removeram-se espaços em branco extras nas variáveis para evitar problemas de incompatibilidade e garantir a consistência dos dados.
+
+-   **Padronização de nomes de variáveis:** Os nomes das colunas foram padronizados, garantindo a consistência e facilidade de referência durante a análise.
+
+-   **Conversão de tipos de dados:** Foram convertidos os tipos de dados das variáveis, como datas e valores numéricos, para um formato adequado para análise.
+
+-   **Tratamento de outliers:** Foram identificados e tratados os outliers nos dados, aplicando técnicas como remoção de outliers extremos ou substituição por valores mais apropriados.
+
+-   **Criação de novas variáveis:** Foram criadas novas variáveis a partir das variáveis existentes, com base nas necessidades da análise. Isso ajudou a fornecer insights mais significativos.
+
+-   **Agregação e resumo de dados:** Foram realizadas operações de agregação e resumo para produzir informações resumidas e insights úteis sobre os dados.
+
+-   **Relacionamentos entre as tabelas:** Os relacionamentos entre as tabelas foram estabelecidos à medida que novas variáveis eram criadas ou os dados eram combinados, garantindo a consistência e integridade dos dados.
+
+A limpeza e transformação dos dados foram essenciais para preparar os dados brutos para a análise posterior, garantindo a qualidade e consistência dos resultados.
+
+#### 5.0.6 **Análise dos Dados** {#sec-5.0.6-an-lise-dos-dados}
+
+Após a preparação dos dados, a análise dos dados foi realizada para identificar padrões, tendências e insights significativos. Foram aplicadas várias técnicas de análise de dados para explorar os dados em diferentes níveis de detalhe e obter uma compreensão abrangente do conjunto de dados.
+
+Algumas das técnicas de análise utilizadas incluíram:
+
+-   **Análise descritiva:** Foram calculadas estatísticas descritivas, como média, mediana, desvio padrão e quartis, para resumir e descrever os dados. Isso ajudou a obter uma visão geral das características dos dados.
+
+-   **Análise de tendências:** Foram utilizadas técnicas de visualização, como gráficos de linha, para identificar tendências e padrões ao longo do tempo. Isso permitiu a identificação de padrões sazonais, flutuações e mudanças ao longo do tempo.
+
+-   **Análise comparativa:** Foram realizadas comparações entre diferentes grupos ou categorias de dados para identificar diferenças significativas. Isso ajudou a entender as diferenças de desempenho, comportamento ou características entre grupos.
+
+-   **Modelagem estatística:** Foram aplicados modelos estatísticos, como regressão linear, para explorar as relações entre variáveis e fazer previsões. Isso permitiu uma compreensão mais aprofundada dos fatores que influenciam as variáveis de interesse.
+
+-   **Análise de padrões:** Foram utilizadas técnicas de mineração de dados, como associação e segmentação, para identificar padrões ocultos nos dados. Isso ajudou a descobrir insights interessantes e identificar grupos ou segmentos específicos nos dados.
+
+A análise dos dados foi realizada de forma iterativa, explorando diferentes ângulos e perspectivas para obter insights úteis sobre o conjunto de dados.
+
+#### 5.0.7 **Visualização dos Dados** {#sec-5.0.7-visualiza-o-dos-dados}
+
+A visualização dos dados desempenhou um papel fundamental na apresentação dos resultados da análise e na comunicação de insights significativos. Foram criadas visualizações gráficas para representar os dados de forma clara e concisa, tornando os padrões e tendências mais compreensíveis.
+
+As principais técnicas de visualização utilizadas incluíram:
+
+-   **Gráficos de barras:** Utilizados para comparar valores entre diferentes grupos ou categorias.
+
+-   **Gráficos de linha:** Utilizados para representar tendências ao longo do tempo.
+
+-   **Gráficos de dispersão:** Utilizados para mostrar a relação entre duas variáveis.
+
+-   **Gráficos de pizza:** Utilizados para representar a proporção de diferentes categorias dentro de um conjunto de dados.
+
+-   **Mapas:** Utilizados para visualizar dados geográficos e padrões espaciais.
+
+O Tableau foi a ferramenta principal utilizada para criar as visualizações. Com sua interface intuitiva e recursos avançados de visualização, foi possível criar gráficos e dashboards interativos e atrativos.
+
+A visualização dos dados ajudou a fornecer uma representação visual dos resultados da análise, tornando os insights mais acessíveis e compreensíveis para os usuários finais.
+
+
+
